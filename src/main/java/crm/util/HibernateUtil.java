@@ -1,6 +1,6 @@
 package crm.util;
 
-import crm.entity.TestEntity;
+import crm.entity.Customer;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -31,7 +31,7 @@ public class HibernateUtil {
     }
 
     private static void configureEntities(Configuration configuration) {
-        configuration.addAnnotatedClass(TestEntity.class);
+        configuration.addAnnotatedClass(Customer.class);
     }
 
     private static Properties loadHibernateProperties() throws IOException {
