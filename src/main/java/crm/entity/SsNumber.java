@@ -1,11 +1,17 @@
 package crm.entity;
 
+import javax.persistence.Column;
 import java.util.Objects;
 
 import static crm.util.ArgumentValidator.validate;
 
+
 public class SsNumber {
+
+    @Column(name = "ssNumber")//give name for column
     private String value;
+
+    private SsNumber(){}; //private constructor for hibernate dont use!
 
     public SsNumber(String value) {
         validate(value != null || value.matches("\\d{11}"), "SsNumber is invadlid" + value);

@@ -2,6 +2,7 @@ package crm.entity;
 
 
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 
@@ -14,11 +15,16 @@ public class Person extends Customer{
 
     private String firstName;
     private String lastName;
+
+    @Embedded //put ssNumber class with Person in one table (avoid OneToOne)
     private SsNumber ssNumber;// crate separate class & validate data there
+
+    private Person(){}; //constructor for hibernate don`t use!
 
     public Person(String firstName, String lastName, SsNumber ssNumber) {
         validate(firstName != null || !firstName.isBlank(), "First name is invalid " + firstName);
         validate(lastName != null || !lastName.isBlank(), "First name is invalid " + lastName);
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.ssNumber = requireNonNull(ssNumber, "SsNumber is null"); //check nonNull
