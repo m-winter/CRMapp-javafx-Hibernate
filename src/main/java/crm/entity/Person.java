@@ -1,6 +1,8 @@
 package crm.entity;
 
 
+import crm.service.RegisterPersonForm;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -28,6 +30,10 @@ public class Person extends Customer{
         this.firstName = firstName;
         this.lastName = lastName;
         this.ssNumber = requireNonNull(ssNumber, "SsNumber is null"); //check nonNull
+    }
+
+    public static Person from(RegisterPersonForm form) {
+        return new Person(form.getFirstName(), form.getLastName(),new SsNumber(form.getSsNumber()));
     }
 
     public String getFirstName() {
