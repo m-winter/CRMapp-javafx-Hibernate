@@ -11,7 +11,7 @@ public class HibernateUtil {
     private static final SessionFactory sessionFactory;
 
 
-    static {
+    static {//static constructor
         try {
             final var configuration = new Configuration();
             configuration.setProperties(loadHibernateProperties());
