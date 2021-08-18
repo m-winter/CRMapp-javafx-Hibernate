@@ -27,8 +27,8 @@ public class Address {
 
     public Address(String street, String city, String zipCode, CountryCode countryCode) {
 
-        validate(street != null && street.isBlank(), "Invalid street");
-        validate(city != null && city.isBlank(), "Invalid city");
+        validate(street != null && !street.isBlank(), "Invalid street");
+        validate(city != null && !city.isBlank(), "Invalid city");
         validate(zipCode != null && zipCode.matches("\\d{1,3}-\\d{1,5}"), "Invalid zipcode");
 
         this.id = UUID.randomUUID();

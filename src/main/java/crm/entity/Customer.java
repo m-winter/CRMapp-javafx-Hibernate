@@ -14,7 +14,8 @@ public abstract class Customer {
     @Id
     private UUID id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)  //if there is smth that includes Address save it
+    @JoinColumn(name = "customer_id")
     private List<Address> addresses;
 
     public Customer() {
@@ -33,7 +34,7 @@ public abstract class Customer {
     }
 
     public List<Address> getAddresses(){
-        return new ArrayList<>(addresses); //give copy to avoid problems
+        return new ArrayList<>(addresses); //give copy of list  to avoid problems
     }
 
     @Override
