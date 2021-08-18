@@ -22,8 +22,8 @@ public class Person extends Customer{
     private Person(){}; //constructor for hibernate don`t use!
 
     public Person(String firstName, String lastName, SsNumber ssNumber) {
-        validate(firstName != null || !firstName.isBlank(), "First name is invalid " + firstName);
-        validate(lastName != null || !lastName.isBlank(), "First name is invalid " + lastName);
+        validate(firstName != null && !firstName.isBlank(), "First name is invalid " + firstName);
+        validate(lastName != null && !lastName.isBlank(), "First name is invalid " + lastName);
 
         this.firstName = firstName;
         this.lastName = lastName;

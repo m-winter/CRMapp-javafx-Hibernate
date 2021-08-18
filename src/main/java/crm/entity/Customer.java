@@ -1,6 +1,8 @@
 package crm.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -12,12 +14,26 @@ public abstract class Customer {
     @Id
     private UUID id;
 
+    @OneToMany
+    private List<Address> addresses;
+
     public Customer() {
     this.id = UUID.randomUUID();
+    this.addresses = new ArrayList<>();
     }
 
     public UUID getId() {
         return id;
+    }
+
+    public void addAddress(Address address){  //avoid setters, use functions
+        if (!addresses.contains(address)){
+            addresses.add(address);
+        }
+    }
+
+    public List<Address> getAddresses(){
+        return new ArrayList<>(addresses); //give copy to avoid problems
     }
 
     @Override
