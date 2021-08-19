@@ -16,7 +16,7 @@ public class CrmApplication extends Application {
         final var scene = new Scene(fxmlLoader.load());
 
         stage.setScene(scene);
-        stage.setMaximized(false);
+        stage.setMaximized(true);
         stage.setTitle("CRM Application");
         stage.show();
 
