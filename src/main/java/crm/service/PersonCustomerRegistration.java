@@ -41,8 +41,7 @@ public class PersonCustomerRegistration {
     }
 
     private Boolean getPersonExist(RegisterPersonForm form, Session session) {
-        return session.createQuery("select count(p) > 0 from Person p where p.lastName = ?1 " +
-                        "and p.ssNumber = ?2", Boolean.class) //check if there is similar Person record in table return true if there is someone
+        return session.createQuery("select count(p) > 0 from Person p where p.lastName = ?1 and p.ssNumber.value = ?2", Boolean.class) //check if there is similar Person record in table return true if there is someone
                 .setParameter(1, form.getLastName())
                 .setParameter(2, form.getSsNumber())
                 .getSingleResult();
