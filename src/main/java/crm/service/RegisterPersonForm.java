@@ -39,4 +39,14 @@ public class RegisterPersonForm {
     public int hashCode() {
         return hash(firstName, lastName, ssNumber);
     }
+
+
+    @Override
+    public String toString() {
+        return "RegisterPersonForm{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", ssNumber='" + ssNumber + '\'' +
+                '}';
+    }
 }
