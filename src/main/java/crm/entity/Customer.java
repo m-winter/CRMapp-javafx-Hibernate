@@ -20,8 +20,10 @@ public abstract class Customer {
     private List<Address> addresses;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
     private PremiumStatus premiumStatus;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private VerificationStatus verificationStatus;
 
     public Customer() {
         this.id = UUID.randomUUID();
@@ -43,13 +45,21 @@ public abstract class Customer {
 
     }
 
+    public void addVerificationStatus(VerificationStatus verificationStatus1){
+        this.verificationStatus = new VerificationStatus(verificationStatus1.isVerified(), verificationStatus1.getVerifiedAt(), verificationStatus1.getVerifiedBy());
+    }
+
 
     public List<Address> getAddresses() {
         return new ArrayList<>(addresses); //give copy of list  to avoid problems
     }
 
     public PremiumStatus getPremiumStatus() {
-        return new PremiumStatus(premiumStatus.isActive(), premiumStatus.getExpireAt(), premiumStatus.getPremiumType());
+        return premiumStatus;
+    }
+
+    public VerificationStatus getVerificationStatus() {
+        return verificationStatus;
     }
 
     @Override

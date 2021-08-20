@@ -36,6 +36,7 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(Address.class);
         configuration.addAnnotatedClass(Company.class);
         configuration.addAnnotatedClass(PremiumStatus.class);
+        configuration.addAnnotatedClass(VerificationStatus.class);
     }
 
     private static Properties loadHibernateProperties() throws IOException {
