@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crm.controller.StartViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crm.controller.AddPersonController">
     <children>
         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRM SYSTEM" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
         <Text layoutX="38.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMIĘ" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0" />
@@ -19,6 +19,6 @@
         <Text layoutX="21.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID UTWORZONEGO KLIENTA:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="317.0" />
         <Text fx:id="customerId" layoutX="188.0" layoutY="329.94921875" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="397.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="317.0" />
       <Text fx:id="errorMessage" fill="RED" layoutX="363.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="171.0" />
-      <Button layoutX="430.0" layoutY="15.0" mnemonicParsing="false" onAction="#displayCustomerList" prefHeight="25.0" prefWidth="156.0" text="PRZEGLĄDAJ KLIENTÓW" />
+      <Button layoutX="430.0" layoutY="15.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="156.0" text="WRÓĆ" />
     </children>
 </AnchorPane>

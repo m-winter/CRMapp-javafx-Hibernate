@@ -11,12 +11,12 @@ public class CrmApplication extends Application {
     public void start(Stage stage) throws Exception {
         final var fxmlLoader = new FXMLLoader(CrmApplication.class
                 .getClassLoader()
-                .getResource("start-view.fxml"));
+                .getResource("main_view.fxml"));
 
         final var scene = new Scene(fxmlLoader.load());
 
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMaximized(false);
         stage.setTitle("CRM Application");
         stage.show();
 

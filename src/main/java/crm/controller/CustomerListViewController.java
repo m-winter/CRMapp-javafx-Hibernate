@@ -15,7 +15,7 @@ public class CustomerListViewController {
 
     @FXML
     public void goBack(ActionEvent event) throws IOException {
-        sceneLoader.loadOnEvent("start-view.fxml", event);
+        sceneLoader.loadOnEvent("addPerson_view.fxml", event);
     }
 }
 

@@ -20,7 +20,7 @@ public class SceneLoader {
                 .getResource(view));
         final var scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMaximized(false);
         stage.show();
     }
 }
