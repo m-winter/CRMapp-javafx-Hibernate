@@ -25,6 +25,9 @@ public abstract class Customer {
     @OneToOne(cascade = CascadeType.ALL)
     private VerificationStatus verificationStatus;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private ContactList contactList;
+
     public Customer() {
         this.id = UUID.randomUUID();
         this.addresses = new ArrayList<>();
@@ -49,9 +52,17 @@ public abstract class Customer {
         this.verificationStatus = new VerificationStatus(verificationStatus1.isVerified(), verificationStatus1.getVerifiedAt(), verificationStatus1.getVerifiedBy());
     }
 
+    public void addContactList(ContactList contactList){
+        this.contactList = contactList;
+    }
+
 
     public List<Address> getAddresses() {
         return new ArrayList<>(addresses); //give copy of list  to avoid problems
+    }
+
+    public ContactList getContactList() {
+        return contactList;
     }
 
     public PremiumStatus getPremiumStatus() {

@@ -37,6 +37,10 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(Company.class);
         configuration.addAnnotatedClass(PremiumStatus.class);
         configuration.addAnnotatedClass(VerificationStatus.class);
+        configuration.addAnnotatedClass(Contact.class);
+        configuration.addAnnotatedClass(ContactList.class);
+        configuration.addAnnotatedClass(EmailContactItem.class);
+        configuration.addAnnotatedClass(PhoneContactItem.class);
     }
 
     private static Properties loadHibernateProperties() throws IOException {
