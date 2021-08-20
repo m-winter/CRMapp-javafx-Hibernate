@@ -1,6 +1,7 @@
 package crm.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,23 +19,37 @@ public abstract class Customer {
     @JoinColumn(name = "customer_id")
     private List<Address> addresses;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private PremiumStatus premiumStatus;
+
     public Customer() {
-    this.id = UUID.randomUUID();
-    this.addresses = new ArrayList<>();
+        this.id = UUID.randomUUID();
+        this.addresses = new ArrayList<>();
     }
 
     public UUID getId() {
         return id;
     }
 
-    public void addAddress(Address address){  //avoid setters, use functions
-        if (!addresses.contains(address)){
+    public void addAddress(Address address) {  //avoid setters, use functions
+        if (!addresses.contains(address)) {
             addresses.add(address);
         }
     }
 
-    public List<Address> getAddresses(){
+    public void addPremiumStatus(PremiumStatus premiumStatus1) {
+        this.premiumStatus =new PremiumStatus(premiumStatus1.isActive(), premiumStatus1.getExpireAt(), premiumStatus1.getPremiumType());
+
+    }
+
+
+    public List<Address> getAddresses() {
         return new ArrayList<>(addresses); //give copy of list  to avoid problems
+    }
+
+    public PremiumStatus getPremiumStatus() {
+        return new PremiumStatus(premiumStatus.isActive(), premiumStatus.getExpireAt(), premiumStatus.getPremiumType());
     }
 
     @Override

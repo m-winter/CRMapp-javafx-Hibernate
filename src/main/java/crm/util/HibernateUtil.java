@@ -1,9 +1,6 @@
 package crm.util;
 
-import crm.entity.Address;
-import crm.entity.Company;
-import crm.entity.Customer;
-import crm.entity.Person;
+import crm.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -38,6 +35,7 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(Person.class);
         configuration.addAnnotatedClass(Address.class);
         configuration.addAnnotatedClass(Company.class);
+        configuration.addAnnotatedClass(PremiumStatus.class);
     }
 
     private static Properties loadHibernateProperties() throws IOException {
