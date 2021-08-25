@@ -61,4 +61,13 @@ public class Person extends Customer{
     public int hashCode() {
         return hash(super.hashCode(), firstName, lastName, ssNumber);
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", ssNumber=" + ssNumber +
+                "} " + super.toString();
+    }
 }

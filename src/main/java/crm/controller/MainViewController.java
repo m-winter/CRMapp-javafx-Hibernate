@@ -40,4 +40,9 @@ public class MainViewController {
     public void displayAddCompanyView(ActionEvent event) throws IOException {
         sceneLoader.loadOnEvent("addCompany_view.fxml", event);
     }
+
+    @FXML
+    public void displayAll(ActionEvent event) throws IOException {
+        sceneLoader.loadOnEvent("showAll_view.fxml", event);
+    }
 }

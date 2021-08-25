@@ -2,6 +2,8 @@ package crm.entity;
 
 import com.neovisionaries.i18n.CountryCode;
 import crm.util.HibernateUtil;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,6 +11,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,6 +64,7 @@ class PersonTest {
 
         //then
         final var readCustomer = session.get(Customer.class, customer.getId());
+
         assertEquals(customer.getAddresses(), readCustomer.getAddresses());
     }
 

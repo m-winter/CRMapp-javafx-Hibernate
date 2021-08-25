@@ -85,4 +85,15 @@ public abstract class Customer {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", addresses=" + addresses +
+                ", premiumStatus=" + premiumStatus +
+                ", verificationStatus=" + verificationStatus +
+                ", contactList=" + contactList +
+                '}';
+    }
 }

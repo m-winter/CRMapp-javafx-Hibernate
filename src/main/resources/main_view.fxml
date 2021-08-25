@@ -7,13 +7,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crm.controller.MainViewController">
     <children>
         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRM SYSTEM" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Button fx:id="addContactButton" layoutX="56.0" layoutY="74.0" mnemonicParsing="false" onAction="#displayAddPersonView" prefHeight="25.0" prefWidth="186.0" text="DODAJ OSOBĘ FIZYCZNĄ" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="80.0" />
+      <Button fx:id="addPersonButton" layoutX="56.0" layoutY="74.0" mnemonicParsing="false" onAction="#displayAddPersonView" prefHeight="25.0" prefWidth="186.0" text="DODAJ OSOBĘ FIZYCZNĄ" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="80.0" />
       <Button fx:id="addAddressButton" layoutX="100.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="DODAJ ADRES" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="140.0" />
       <Button fx:id="showByIdButton" layoutX="100.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="ZNAJDZ INFORMACJE PO ID" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="260.0" />
       <Button fx:id="addPremiumButton" layoutX="100.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="DODAJ STATUS PREMIUM" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="200.0" />
       <Button fx:id="addCompanyButton" layoutX="335.0" layoutY="74.0" mnemonicParsing="false" onAction="#displayAddCompanyView" prefHeight="25.0" prefWidth="186.0" text="DODAJ FIRMĘ" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="80.0" />
       <Button fx:id="addVerifiedButton" layoutX="314.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="ZWEYFIKUJ DANE" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="140.0" />
       <Button fx:id="addContactButton" layoutX="314.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="DODAJ KONTAKT" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="200.0" />
-      <Button fx:id="showAllButton" layoutX="314.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="WYŚWIETL WSZYSTKIE DANE" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="260.0" />
+      <Button fx:id="showAllButton" layoutX="314.0" layoutY="239.0" mnemonicParsing="false" onAction="#displayAll" prefHeight="25.0" prefWidth="186.0" text="WYŚWIETL WSZYSTKIE DANE" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="260.0" />
     </children>
 </AnchorPane>
